@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "com.deepseek.harness.desktop",
+  "productName": "DeepSeek Harness",
+  "npmRebuild": false,
+  "buildDependenciesFromSource": false,
+  "directories": {
+    "output": "dist",
+    "buildResources": "build"
+  },
+  "files": [
+    "src/**/*",
+    "node_modules/**/*",
+    "package.json"
+  ],
+  "asar": false,
+  "win": {
+    "target": [
+      {
+        "target": "portable",
+        "arch": [
+          "x64"
+        ]
+      },
+      {
+        "target": "dir",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "icon": "build/icon.ico",
+    "artifactName": "${productName}-${version}-Portable.${ext}"
+  },
+  "portable": {
+    "artifactName": "DeepSeek-Harness-Portable.exe"
+  }
+}
